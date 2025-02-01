@@ -3,19 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --body-light: #e9e9e8;
+    --body-dark: #525659;
+    --text-light: #212121;
+    --text-dark: #FFFFFF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/*
+General styles
+*/
+body,
+#root {
+    width: 100dvw;
+    height: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    @apply transition-colors duration-0 delay-0
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--body-light);
+    color: var(--text-light);
+
+    &.dark {
+        background-color: var(--body-dark);
+        color: var(--text-dark);
+    }
 }
+
+/* 
+Helpers
+*/
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /** Common Styles **/
+    .form-control {
+        @apply block w-full px-3 py-2 text-gray border border-gray-light rounded-md
+            focus:ring-golden focus:border-golden bg-white dark:bg-dark-bg-2
+            focus:outline-0 hover:border-black dark:border-gray-dark 
+    }
+}
+
+/* 
+Scrollbar
+*/
+*::-webkit-scrollbar {
+    width: 6px;
+    @media only screen and (max-width: 768px) {
+        width: 3px;
+    }
+}
+
+*::-webkit-scrollbar-track {
+    background: #E9E9E9;
+    padding: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #A9B782;
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #A9B782;
+}             
