@@ -48,8 +48,11 @@ export default {
             'body-dark': '#525659',
             'taskbar-bg-light': '#ccccd0',
             'taskbar-bg-dark': '#323539',
+            'action-hover-light': '#bdbfc3',
+            'action-hover-dark': '#45474a',
             'text-light': '#212121',
-            'text-dark': '#FFFFFF'
+            'text-dark': '#FFFFFF',
+            'black': '#212121'
         },
     },
     plugins: [],

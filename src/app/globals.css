@@ -43,6 +43,9 @@ Helpers
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     /** Common Styles **/
+    .icon-button {
+        @apply p-3 rounded-full hover:bg-action-hover-light hover:dark:bg-action-hover-dark
+    }
     .form-control {
         @apply block w-full px-3 py-2 text-gray border border-gray-light rounded-md
             focus:ring-golden focus:border-golden bg-white dark:bg-dark-bg-2

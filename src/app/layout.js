@@ -1,4 +1,5 @@
-import Taskbar from '@/components/Taskbar';
+import Taskbar from '@/components/taskbar/Taskbar';
+import Sidebar from '@/components/sidebar/Sidebar';
 import StoreProvider from '@/state/StoreProvider';
 import "./globals.css";
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
             <html lang="en">
                 <body className='bg-body dark:bg-body-dark'>
                     <Taskbar />
+                    <Sidebar/>
                     {children}
                 </body>
             </html>

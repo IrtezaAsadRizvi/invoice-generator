@@ -5,7 +5,7 @@ export const uiSlice = createSlice({
     name: 'ui',
     initialState: {
         enableDarkmode: false,   
-        sideBarExpanded: true,
+        sideBarExpanded: false,
         alerts: [],
         isMobile: false
     },
