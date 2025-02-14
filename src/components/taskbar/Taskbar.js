@@ -6,6 +6,7 @@ import DarkModeSwitch from "./DarkModeSwitch";
 import SideMenuToggle from "./SideMenuToggle";
 import DownloadTrigger from "./DownloadTrigger";
 import PrintTrigger from "./PrintTrigger";
+import LanguageSwitch from "./LanguageSwitch";
 
 const TaskbarClient = () => {
     const enableDarkmode = useSelector((state) => state.ui.enableDarkmode);
@@ -28,6 +29,7 @@ const TaskbarClient = () => {
                 <DownloadTrigger/>
                 <PrintTrigger/>
                 <DarkModeSwitch/>
+                <LanguageSwitch/>
             </div>
         </nav>
     );

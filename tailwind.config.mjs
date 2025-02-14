@@ -11,7 +11,7 @@ export default {
                 custom: ['"Roboto"', 'sans-serif']
             },
             boxShadow: {
-                box: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;'
+                box: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
             },
             borderRadius: {
                 'curve-bottom': '0 0 50% 50% / 0 0 15% 15%',
@@ -52,7 +52,9 @@ export default {
             'action-hover-dark': '#45474a',
             'text-light': '#212121',
             'text-dark': '#FFFFFF',
-            'black': '#212121'
+            'white': '#FFFFFF',
+            'black': '#212121',
+            'light-gray': '#e9e9e8'
         },
     },
     plugins: [],

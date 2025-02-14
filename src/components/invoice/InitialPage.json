@@ -1,0 +1,57 @@
+{
+    "version": 5,
+    "type": "invoice",
+    "date": "Feb 11, 2025",
+    "dueDate": "Feb 13, 2025",
+    "from": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "address": "",
+        "city": "",
+        "country": "",
+        "zip": "",
+        "website": "",
+        "owner": ""
+    },
+    "to": {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "address": "",
+        "city": "",
+        "country": "",
+        "zip": ""
+    },
+    "items": [
+        {
+            "quantity": 1,
+            "name": "Logo design",
+            "description": null,
+            "unit_cost": 30,
+            "amount": 30
+        },
+        {
+            "quantity": 2,
+            "name": "Brochure design",
+            "description": null,
+            "unit_cost": 100,
+            "amount": 200
+        },
+        {
+            "quantity": 1,
+            "name": "Card design",
+            "description": null,
+            "unit_cost": 10,
+            "amount": 10
+        }
+    ],
+    "currency": {
+        "countryName": "United States",
+        "countryCode": "US",
+        "currency": "United States Dollar",
+        "currencyCode": "USD",
+        "currencySymbol": "$",
+        "alignment": "left"
+    }
+}
