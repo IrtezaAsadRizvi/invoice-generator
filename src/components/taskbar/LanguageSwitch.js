@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { locales } from "@/i18n/config"; // Ensure this is correctly imported
+import { locales, localesInfo } from "@/i18n/config"; // Ensure this is correctly imported
 import IconTranslate from "../vector/IconTranslate"
-import Dropdown from "../common/Dropdown";
+import Dropdown from "../common/Dropdown"
 
 const LanguageSwitch = () => {
     const router = useRouter();
@@ -33,7 +33,11 @@ const LanguageSwitch = () => {
         //         </option>
         //     ))}
         // </select>
-        <Dropdown title={() => <IconTranslate/>} />
+        <Dropdown 
+            title={() => <IconTranslate/>} 
+            items={localesInfo.map(({nativeName, code}) => ({text: `${nativeName}`, value: code}))}
+            initialValue={currentLocale}
+            onSelect={(e) => {changeLanguage(e)}}/>
     );
 };
 

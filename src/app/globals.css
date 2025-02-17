@@ -44,7 +44,8 @@ Helpers
 
     /** Common Styles **/
     .icon-button {
-        @apply p-3 rounded-full hover:bg-action-hover-light hover:dark:bg-action-hover-dark
+        @apply p-3 rounded-xl hover:bg-action-hover-light hover:dark:bg-action-hover-dark 
+        transition-colors duration-150
     }
     .form-control {
         @apply block w-full px-3 py-2 text-gray border border-gray-light rounded-md
