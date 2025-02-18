@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const InvoiceLogo = () => {
+    const t = useTranslations("invoice");
     const [image, setImage] = useState(null);
 
     const handleImageUpload = (event) => {
@@ -15,10 +17,10 @@ const InvoiceLogo = () => {
     return (
         <div className="flex flex-col items-center relative max-w-max">
             {image ? (
-                <img src={image} alt="Invoice Logo" className="w-32 h-32 object-cover border rounded-md" />
+                <img src={image} alt="Invoice Logo" className="w-20 h-20 object-cover rounded-sm" />
             ) : (
-                <div className="w-32 h-32 bg-gray-300 border rounded-md flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">Upload Logo</span>
+                <div className="w-20 h-20 bg-light-gray rounded-sm flex items-center justify-center">
+                    <span className="text-black opacity-40 font-bold capitalize">{t('logo')}</span>
                 </div>
             )}
             <input

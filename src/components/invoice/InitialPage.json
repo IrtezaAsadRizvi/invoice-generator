@@ -3,6 +3,11 @@
     "type": "invoice",
     "date": "Feb 11, 2025",
     "dueDate": "Feb 13, 2025",
+    "company": {
+        "logo": "",
+        "name": "",
+        "website": ""
+    },
     "from": {
         "name": "",
         "email": "",
@@ -11,7 +16,6 @@
         "city": "",
         "country": "",
         "zip": "",
-        "website": "",
         "owner": ""
     },
     "to": {

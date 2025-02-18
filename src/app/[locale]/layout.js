@@ -5,7 +5,10 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { Source_Sans_3 } from 'next/font/google'
 import "../globals.css";
+
+const font = Source_Sans_3({ subsets: ['latin'] })
 
 export const metadata = {
     title: "Create Next App",
@@ -27,7 +30,7 @@ export default async function RootLayout({ children, params }) {
     return (
         <StoreProvider>
             <html lang={locale}>
-                <body className='bg-body dark:bg-body-dark'>
+                <body className={`bg-body dark:bg-body-dark ${font.className}`}>
                     <NextIntlClientProvider messages={messages}>
                         <Taskbar />
                         <Sidebar />

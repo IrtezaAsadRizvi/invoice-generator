@@ -1,12 +1,10 @@
 import IconDownload from "../vector/IconDownload"
+import { downloadInvoices } from "@/helper"
 
 const DownloadTrigger = () => {
-    const triggerDownload = () => {
-        console.log('start download')
-    }
     return (
         <button className='icon-button'
-            onClick={triggerDownload}>
+            onClick={() => {downloadInvoices()}}>
             <IconDownload />
         </button>
     )

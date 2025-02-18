@@ -39,26 +39,72 @@ body {
 Helpers
 */
 @layer utilities {
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 
     /** Common Styles **/
     .icon-button {
-        @apply p-3 rounded-xl hover:bg-action-hover-light hover:dark:bg-action-hover-dark 
-        transition-colors duration-150
+        @apply p-3 rounded-xl hover:bg-action-hover-light hover:dark:bg-action-hover-dark transition-colors duration-150
     }
-    .form-control {
-        @apply block w-full px-3 py-2 text-gray border border-gray-light rounded-md
-            focus:ring-golden focus:border-golden bg-white dark:bg-dark-bg-2
-            focus:outline-0 hover:border-black dark:border-gray-dark 
+
+    .invoice-control {
+        @apply block w-full px-1 py-0 rounded-md focus:outline-0 hover:bg-action-hover-3-light relative after:content-[''] after:block after:relative after:w-full after:h-[1px] after:bg-black after:opacity-0 focus-within:after:opacity-100 after:bottom-[3px] [&_input]:bg-[transparent] focus-within:bg-action-hover-3-light focus-within:[&_input]:outline-none
     }
 }
+
+#print-container {
+    display: none; /* Hidden by default */
+}
+@media print {
+    /* Hide headers and footers in the print preview (they are browser-specific) */
+    @page {
+        margin: 0; /* Optional: remove margins around the page */
+    }
+    
+    /* Hide unwanted elements like page numbers, dates, etc. */
+    body {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    body * {
+        visibility: hidden;
+        /* Hide everything by default */
+    }
+
+    #print-container,
+    #print-container * {
+        visibility: visible;
+        /* Only show the print container */
+    }
+
+    #print-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        display: block; 
+    }
+
+    .invoice-page {
+        page-break-after: always;
+        /* Ensures each invoice prints on a new page */
+    }
+}
+
 
 /* 
 Scrollbar
 */
 *::-webkit-scrollbar {
     width: 6px;
+
     @media only screen and (max-width: 768px) {
         width: 3px;
     }
@@ -78,4 +124,52 @@ Scrollbar
 
 *::-webkit-scrollbar-thumb:hover {
     background: #A9B782;
-}             
+}
+
+
+/**
+
+*/
+
+.react-datepicker__input-container {
+    position: relative;
+}
+
+.react-datepicker__input-container::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: 1px;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.react-datepicker__input-container:has(input:focus)::after {
+    pointer-events: auto;
+    opacity: 1 !important;
+    /* Optional: Make it visible if it's hidden */
+}
+
+.react-datepicker__day--selected {
+    background-color: #212121 !important;
+    color: #ffffff !important;
+}
+
+.react-datepicker__header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.react-datepicker {
+    border: none !important;
+    border-radius: 8px !important;
+    top: -6px !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+}
+
+.react-datepicker__triangle {
+    display: none;
+}

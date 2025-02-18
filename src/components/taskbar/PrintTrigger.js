@@ -1,12 +1,10 @@
 import IconPrint from "../vector/IconPrint"
+import { printInvoices } from "@/helper"
 
 const PrintTrigger = () => {
-    const triggerPrint = () => {
-        console.log('start print')
-    }
     return (
         <button className='icon-button'
-            onClick={triggerPrint}>
+            onClick={() => {printInvoices()}}>
             <IconPrint />
         </button>
     )
