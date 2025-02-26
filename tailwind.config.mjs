@@ -60,6 +60,7 @@ export default {
             'text-dark': '#FFFFFF',
             'white': '#FFFFFF',
             'black': '#212121',
+            'gray': '#9BA3AF',
             'light-gray': '#e9e9e8'
         },
     },

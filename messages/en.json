@@ -1,7 +1,8 @@
 {
     "common" : {
         "welcome_message": "Welcome to React and react-i18next",
-        "page": "Page"
+        "page": "Page",
+        "select_theme": "Select Theme"
     },
     "invoice": {
         "logo": "Logo",

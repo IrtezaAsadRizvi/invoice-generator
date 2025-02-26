@@ -4,8 +4,8 @@ import { generateUuidv4 } from '@/helpers/utils';
 export const uiSlice = createSlice({
     name: 'ui',
     initialState: {
-        enableDarkmode: false,   
-        sideBarExpanded: false,
+        enableDarkmode: false,
+        sideBarExpanded: null,
         alerts: [],
         isMobile: false
     },

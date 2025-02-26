@@ -6,7 +6,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Source_Sans_3 } from 'next/font/google'
-import "../globals.css";
+import "../styles/globals.css";
+import "../styles/tooltip.css";
 
 const font = Source_Sans_3({ subsets: ['latin'] })
 

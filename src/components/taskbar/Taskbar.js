@@ -7,6 +7,8 @@ import SideMenuToggle from "./SideMenuToggle";
 import DownloadTrigger from "./DownloadTrigger";
 import PrintTrigger from "./PrintTrigger";
 import LanguageSwitch from "./LanguageSwitch";
+import AddInvoicePage from "./AddInvoicePage";
+import ThemePanelToggle from "./ThemePanelToggle";
 
 const TaskbarClient = () => {
     const enableDarkmode = useSelector((state) => state.ui.enableDarkmode);
@@ -20,11 +22,17 @@ const TaskbarClient = () => {
     }, [enableDarkmode]);
 
     return (
-        <nav className="bg-taskbar-bg-light dark:bg-taskbar-bg-dark 
+        <nav className="sticky top-0 z-30 bg-taskbar-bg-light dark:bg-taskbar-bg-dark 
             w-full px-3 py-2 flex justify-between items-center">
             <div className="flex items-center justify-start">
                 <SideMenuToggle/>
             </div>
+
+            <div className="flex items-center justify-end">
+                <AddInvoicePage/>
+                <ThemePanelToggle/>
+            </div>
+
             <div className="flex items-center justify-end">
                 <DownloadTrigger/>
                 <PrintTrigger/>
@@ -37,9 +45,7 @@ const TaskbarClient = () => {
 
 const Taskbar = () => {
     return (
-        <div>
-            <TaskbarClient />
-        </div>
+        <TaskbarClient />
     );
 };
 

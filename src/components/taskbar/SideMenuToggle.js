@@ -1,15 +1,15 @@
 "use client"
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setSideBarExpanded } from '../../state/uiSlice'
 import IconMenu from '../vector/IconMenu.js'
+import { SIDE_PANELS } from '@/config/utils'
 
 
 const SideMenuToggle = () => {
-    const sideBarExpanded = useSelector((state) => state.ui.sideBarExpanded)
     const dispatch = useDispatch()
 
     const toggleSidebar = () => {
-        dispatch(setSideBarExpanded(!sideBarExpanded))
+        dispatch(setSideBarExpanded(SIDE_PANELS.main))
     }
 
     return (

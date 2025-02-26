@@ -54,7 +54,12 @@ Helpers
     }
 
     .invoice-control {
-        @apply block w-full px-1 py-0 rounded-md focus:outline-0 hover:bg-action-hover-3-light relative after:content-[''] after:block after:relative after:w-full after:h-[1px] after:bg-black after:opacity-0 focus-within:after:opacity-100 after:bottom-[3px] [&_input]:bg-[transparent] focus-within:bg-action-hover-3-light focus-within:[&_input]:outline-none
+        @apply block w-full px-1 py-0 rounded-md focus:outline-0
+        hover:bg-action-hover-3-light relative after:content-[''] 
+        after:block after:relative after:w-full after:h-[1px]
+        after:bg-black after:opacity-0 focus-within:after:opacity-100 
+        after:bottom-[3px] [&_input]:bg-[transparent] [&_input]:w-full
+        focus-within:bg-action-hover-3-light focus-within:[&_input]:outline-none
     }
 }
 
@@ -130,7 +135,9 @@ Scrollbar
 /**
 
 */
-
+.react-datepicker-wrapper {
+    max-width: 90px;
+}
 .react-datepicker__input-container {
     position: relative;
 }
