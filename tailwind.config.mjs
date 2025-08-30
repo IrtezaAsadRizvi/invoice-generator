@@ -8,7 +8,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                custom: ['"Roboto"', 'sans-serif']
+            custom: ['"Roboto"', 'sans-serif']
             },
             boxShadow: {
                 box: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
@@ -17,6 +17,12 @@ export default {
             },
             borderRadius: {
                 'curve-bottom': '0 0 50% 50% / 0 0 15% 15%',
+            },
+            animation: {
+                gradient: 'gradientAnim 120s ease infinite',
+            },
+            backgroundSize: {
+                '1600%': '1600% 1600%',
             },
             keyframes: {
                 'zoom-in': {
@@ -35,6 +41,11 @@ export default {
                     '0%': { backgroundPosition: '-100%' },
                     '100%': { backgroundPosition: '100%' },
                 },
+                gradientAnim: {
+                    '0%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                    '100%': { backgroundPosition: '0% 50%' },
+                }
             },
             animation: {
                 'zoom-in': 'zoom-in 0.2s ease-out forwards',

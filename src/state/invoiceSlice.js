@@ -4,7 +4,13 @@ import { generateUuidv4 } from '@/helpers/utils';
 export const invoiceSlice = createSlice({
     name: 'invoice',
     initialState: {
-        pages: []
+        pages: [],
+        currency: {
+            currency: 'United States Dollar',
+            currencyCode: 'USD',
+            currencySymbol: '$',
+            alignment: 'left',
+        }
     },
     reducers: {
         addPage: (state, { payload }) => {
@@ -16,11 +22,14 @@ export const invoiceSlice = createSlice({
         },
         removePage: (state, { payload }) => {
             state.pages = state.pages.filter(page => page.id !== payload);
+        },
+        setCurrency: (state, { payload }) => {
+            state.currency = payload
         }
     }
 });
 
 
-export const { addPage, updatePage, removePage } = invoiceSlice.actions;
+export const { addPage, updatePage, removePage, setCurrency } = invoiceSlice.actions;
 
 export default invoiceSlice.reducer;

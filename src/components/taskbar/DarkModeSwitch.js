@@ -1,3 +1,4 @@
+"use client"
 import { useSelector, useDispatch } from 'react-redux'
 import { setEnableDarkmode } from '../../state/uiSlice'
 import IconLightMode from '../vector/IconLightMode.js'

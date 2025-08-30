@@ -7,7 +7,7 @@ import { SIDE_PANEL_HEADERS } from '@/config/utils'
 const Sidebar = () => {
     const sideBarExpanded = useSelector((state) => state.ui.sideBarExpanded) || null
     const dispatch = useDispatch()
-    const t = useTranslations("common");
+    const t = useTranslations();
     return (
         <>
             <div onClick={() => {dispatch(setSideBarExpanded(null))}}
@@ -23,7 +23,7 @@ const Sidebar = () => {
                     onClick={() => {dispatch(setSideBarExpanded(null))}}>
                     <IconX />
                 </button>
-                <h3 className='my-3 ml-4 font-semibold'>{t(SIDE_PANEL_HEADERS[sideBarExpanded] || '')}</h3>
+                {/* <h3 className='my-3 ml-4 font-semibold'>{t(SIDE_PANEL_HEADERS[sideBarExpanded] || '')}</h3> */}
             </aside>
         </>
     )

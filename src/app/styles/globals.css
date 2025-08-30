@@ -61,6 +61,13 @@ Helpers
         after:bottom-[3px] [&_input]:bg-[transparent] [&_input]:w-full
         focus-within:bg-action-hover-3-light focus-within:[&_input]:outline-none
     }
+
+    .text-gradient {
+        font-style: normal;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(320deg, rgb(124, 132, 243), rgb(255, 77, 210), rgb(255, 153, 59), rgb(255, 77, 210), rgb(124, 132, 243), rgb(255, 77, 210), rgb(255, 153, 59)) 0% 0% / 400% 400% text;
+        animation: 45sease 0s infinite normal none running buttonGradient;
+    }
 }
 
 #print-container {

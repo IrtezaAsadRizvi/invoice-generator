@@ -7,6 +7,7 @@ import SideMenuToggle from "./SideMenuToggle";
 import DownloadTrigger from "./DownloadTrigger";
 import PrintTrigger from "./PrintTrigger";
 import LanguageSwitch from "./LanguageSwitch";
+import CurrencySelector from "./CurrencySelector";
 import AddInvoicePage from "./AddInvoicePage";
 import ThemePanelToggle from "./ThemePanelToggle";
 
@@ -31,6 +32,7 @@ const TaskbarClient = () => {
             <div className="flex items-center justify-end">
                 <AddInvoicePage/>
                 <ThemePanelToggle/>
+                <CurrencySelector/>
             </div>
 
             <div className="flex items-center justify-end">

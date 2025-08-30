@@ -26,13 +26,6 @@ const LanguageSwitch = () => {
     };
 
     return (
-        // <select value={currentLocale} onChange={(e) => changeLanguage(e.target.value)}>
-        //     {locales.map((locale) => (
-        //         <option key={locale} value={locale}>
-        //             {locale.toUpperCase()}
-        //         </option>
-        //     ))}
-        // </select>
         <Dropdown 
             title={() => <IconTranslate/>} 
             items={localesInfo.map(({nativeName, code}) => ({text: `${nativeName}`, value: code}))}

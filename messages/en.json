@@ -1,12 +1,16 @@
 {
     "common" : {
         "welcome_message": "Welcome to React and react-i18next",
-        "page": "Page",
-        "select_theme": "Select Theme"
+        "page": "Page"
+               
     },
+    "select_theme": "Select Theme",
     "invoice": {
         "logo": "Logo",
         "company_name": "Company Name",
-        "website": "www.company.com"
+        "website": "www.company.com",
+        "from": "from",
+        "to": "to",
+        "bill_to": "Bill To"
     }
 }

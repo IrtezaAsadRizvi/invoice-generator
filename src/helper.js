@@ -1,3 +1,5 @@
+
+
 export function printInvoices() {
     const printContainer = document.createElement('div');
     printContainer.id = 'print-container';
@@ -17,45 +19,37 @@ export function printInvoices() {
     document.body.removeChild(printContainer);
 }
 
-
 export function downloadInvoices() {
-    const pages = document.querySelectorAll('.invoice-page'); // Select all elements
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const pages = document.querySelectorAll('.invoice-page');
 
-    let totalHeight = 0;
-    let maxWidth = 0;
+    // Wrapper to hold cloned pages
+    const container = document.createElement('div');
+    container.style.position = 'absolute';
+    container.style.top = '-9999px';
+    container.style.width = '794px';  // A4 width in px at 96dpi
+    container.style.background = 'white';
+    container.style.fontSize = '16px'; // Tailwind text-base equivalent
 
-    // First, get the total height of all pages
-    pages.forEach((page) => {
-        const rect = page.getBoundingClientRect();
-        maxWidth = Math.max(maxWidth, rect.width);
-        totalHeight += rect.height;
+    pages.forEach(page => {
+        const clone = page.cloneNode(true);
+        clone.style.pageBreakAfter = 'always';
+        container.appendChild(clone);
     });
 
-    // Set canvas size
-    canvas.width = maxWidth;
-    canvas.height = totalHeight;
+    document.body.appendChild(container);
 
-    let yOffset = 0;
+    const opt = {
+        margin: 0,
+        filename: 'invoice.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+            scale: 2,
+            useCORS: true
+        },
+        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+    };
 
-    // Now, draw each page onto the canvas
-    pages.forEach((page) => {
-        const rect = page.getBoundingClientRect();
-        ctx.fillStyle = 'white';
-        ctx.fillRect(0, yOffset, rect.width, rect.height);
-        ctx.fillStyle = 'black';
-        ctx.font = '16px Arial';
-        ctx.fillText(page.innerText, 10, yOffset + 20);
-        yOffset += rect.height;
-    });
-
-    // Convert canvas to an image
-    const image = canvas.toDataURL('image/png');
-
-    // Download the image
-    const link = document.createElement('a');
-    link.href = image;
-    link.download = 'invoice.png';
-    link.click();
+    // html2pdf().set(opt).from(container).save().then(() => {
+    //     container.remove(); // Clean up
+    // });
 }
